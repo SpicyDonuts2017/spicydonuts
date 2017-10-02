@@ -9,30 +9,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      // items: []
-    }
+      topic: ''
+    };
   }
 
   componentDidMount() {
-    // $.ajax({
-    //   url: '/items', 
-    //   success: (data) => {
-    //     this.setState({
-    //       items: data
-    //     })
-    //   },
-    //   error: (err) => {
-    //     console.log('err', err);
-    //   }
-    // });
+    $.ajax({
+      url: '/surveys', 
+      success: (data) => {
+        console.log(data);
+        this.setState({
+          topic: data[0].Topic
+        });
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
   }
 
   render () {
     return (<div>
       <Submit />
-      <Topic />
+      <Topic topic={this.state.topic}/>
       <Vote />
-    </div>)
+    </div>);
   }
 }
 
