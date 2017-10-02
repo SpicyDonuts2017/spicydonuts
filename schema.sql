@@ -1,17 +1,26 @@
-DROP DATABASE IF EXISTS list;
+DROP DATABASE IF EXISTS spicydonuts;
 
-CREATE DATABASE list;
+CREATE DATABASE spicydonuts;
 
-USE list;
+USE spicydonuts;
 
-CREATE TABLE people (
-  id int NOT NULL AUTO_INCREMENT,
-  person varchar(50) NOT NULL,
-  status varchar(50) NOT NULL,
-  present varchar(50) NOT NULL,
-  PRIMARY KEY (ID)
+DROP TABLE IF EXISTS `Survey`;
+        
+CREATE TABLE `Survey` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `Topic` VARCHAR(250) NULL DEFAULT NULL,
+  `Yes` INTEGER(100) NULL DEFAULT NULL,
+  `No` INTEGER NULL DEFAULT NULL,
+  `Total` INTEGER(100) NULL DEFAULT NULL,
+  `UserId` VARCHAR(250) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );
 
-/*  Execute this file from the command line by typing:
- *    mysql -u root < server/schema.sql
- *  to create the database and the tables.*/
+DROP TABLE IF EXISTS 'Users';
+
+CREATE TABLE `Users` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `Name` VARCHAR(255) NULL DEFAULT NULL,
+  'Password' VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
