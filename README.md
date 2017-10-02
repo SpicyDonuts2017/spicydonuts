@@ -1,13 +1,13 @@
-# Project Name
+# Pupvote 
 
-> Pithy project description
+> Create polls for any topic
 
 ## Team
 
-  - teamMember
-  - teamMember
-  - teamMember
-  - teamMember
+  - Helen Yi
+  - Daniel Tran
+  - Brian Kim
+  - Volkan Ozyar
 
 ## Table of Contents
 
