@@ -9,7 +9,7 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "node server/index.js"
+    "start": "server/index.js"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

@@ -31,7 +31,7 @@ app.get('/surveys', (req, res) => {
   });
 });
 
-app.listen(3000, function() {
-  console.log('listening on port 3000!');
+app.listen(process.env.PORT, function() {
+  console.log('listening on port `{process.env.PORT}`!');
 });
 
