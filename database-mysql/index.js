@@ -16,7 +16,7 @@ var getAllSurveys = function(callback) {
 
 // function to update survey table with new survey
 var createSurvey = function(params, callback) {
-  connection.query('insert into Survey set ?', params, function(err, results, fields) {
+  connection.query('insert into Survey (Topic, Yes, No, Total) values (?, ?, ?, ?)', params, function(err, results, fields) {
     if (err) {
       console.log(err, null);
     } else {

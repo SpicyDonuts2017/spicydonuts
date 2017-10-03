@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
+import Submit from './components/Submit.jsx';
+import Topic from './components/Topic.jsx';
+import Vote from './components/Vote.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
-    }
+      topic: ''
+    };
   }
 
   componentDidMount() {
     $.ajax({
-      url: '/items', 
+      url: '/surveys', 
       success: (data) => {
+        console.log(data);
         this.setState({
-          items: data
-        })
+          topic: data[0].Topic
+        });
       },
       error: (err) => {
         console.log('err', err);
@@ -27,9 +30,10 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+      <Submit />
+      <Topic topic={this.state.topic}/>
+      <Vote />
+    </div>);
   }
 }
 
